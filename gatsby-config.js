@@ -3,7 +3,7 @@ const path = require(`path`);
 module.exports = {
   siteMetadata: {
     title: `To-do app`,
-    siteUrl: `http://localhost:8000`,
+    siteUrl: `https://ys-todo-app.netlify.app`,
     description: `To-do list web application`,
     image: `/images/todos.png`,
   },
