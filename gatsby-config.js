@@ -43,14 +43,7 @@ module.exports = {
         icon: `src/images/todos.png`,
       },
     },
-    `gatsby-plugin-react-helmet-async`,
-    {
-      resolve: `gatsby-plugin-preload-fonts`,
-      options: {
-        crossOrigin: (pathname) =>
-          pathname.match(/^\/elevated/) ? `use-credentials` : `anonymous`,
-      },
-    },
+    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,

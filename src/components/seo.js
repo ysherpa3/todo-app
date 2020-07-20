@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 /**
  * SEO component
@@ -53,12 +53,6 @@ const SEO = () => {
       <meta property="og:title" content={defaults.title} />
       <meta property="og:description" content={defaults.description} />
       <meta property="og:image" content={defaults.image} />
-
-      <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400&display=swap"
-        media="screen"
-        rel="stylesheet"
-      />
     </Helmet>
   );
 };
