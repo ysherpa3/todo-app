@@ -11,25 +11,20 @@ import MuiTheme from "./mui-theme";
 import SEO from "./seo";
 
 const useStyles = makeStyles({
-  // Global styles
-  "@global": {
-    body: {
-      backgroundColor: "#e8eaf6",
-      color: "#212121",
-      height: "100%",
-      width: "100%",
-    },
-  },
   // Styles applied to root element
   root: {
     alignItems: "center",
     display: "flex",
     flexDirection: "column",
+    justifyContent: "center",
     minHeight: "100vh",
+    backgroundColor: "#e8eaf6",
+    color: "#212121",
   },
   // Styles applied to the header element
   nav: {
     flexShrink: 0,
+    width: "100%",
   },
   // Styles applied to the main element
   main: {
@@ -42,6 +37,7 @@ const useStyles = makeStyles({
   // Styles applied to the footer element
   footer: {
     flexShrink: 0,
+    width: "100%",
   },
 });
 
@@ -61,15 +57,15 @@ const Layout = ({ children }) => {
       <SEO />
       <ThemeProvider theme={responsiveFontSizes(MuiTheme)}>
         <CssBaseline />
-        <Container className={classes.nav} component="nav">
+        <nav>
           <Appbar />
-        </Container>
+        </nav>
         <Container className={classes.main} component="main" maxWidth="sm">
           {children}
         </Container>
-        <Container className={classes.footer} component="footer" maxWidth="sm">
+        <footer className={classes.footer}>
           <Footer />
-        </Container>
+        </footer>
       </ThemeProvider>
     </div>
   );
