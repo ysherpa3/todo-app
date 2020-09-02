@@ -1,12 +1,12 @@
+import { Paper } from "@material-ui/core";
 import React, { createContext, useReducer } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Title from "./title";
 import { todoActionReducer } from "./todo-action-reducer";
 import { todoFilterReducer } from "./todo-filter-reducer";
 import TodoItemAdd from "./todo-item-add";
 import TodoItemList from "./todo-item-list";
 import TodosFilter from "./todos-filter";
-import { Paper } from "@material-ui/core";
-import Title from "./title";
 
 const initialTodos = [
   {

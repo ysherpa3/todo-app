@@ -1,6 +1,7 @@
 import { List } from "@material-ui/core";
 import React from "react";
 import TodoItem from "./todo-item.js";
+import theme from "./mui-theme.js";
 
 /**
  * To-do item list component
@@ -11,7 +12,7 @@ import TodoItem from "./todo-item.js";
 
 const TodoItemList = ({ todos, TodoContext }) => {
   return (
-    <List dense>
+    <List style={{ margin: theme.spacing(2, 0) }}>
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} TodoContext={TodoContext} />
       ))}

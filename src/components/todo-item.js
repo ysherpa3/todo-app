@@ -51,7 +51,15 @@ const TodoItem = ({ todo, TodoContext }) => {
             style={{ textDecoration: todo.complete ? "line-through" : "" }}
           />
         </Grid>
-        <Grid item xs={4} style={{ textAlign: "right" }}>
+        <Grid
+          item
+          xs={4}
+          style={{
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+          }}
+        >
           <IconButton
             color="primary"
             onClick={handleToggle}

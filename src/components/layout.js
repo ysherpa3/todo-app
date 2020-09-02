@@ -2,7 +2,7 @@ import { Container, CssBaseline } from "@material-ui/core";
 import {
   makeStyles,
   responsiveFontSizes,
-  ThemeProvider,
+  ThemeProvider
 } from "@material-ui/core/styles";
 import React from "react";
 import Appbar from "./appbar";

@@ -1,6 +1,5 @@
-import { Button, ButtonGroup, useMediaQuery } from "@material-ui/core";
-import React from "react";
-import theme from "./mui-theme";
+import { AppBar, Tab, Tabs } from "@material-ui/core";
+import React, { useState } from "react";
 
 /**
  * To-do filter component
@@ -11,7 +10,7 @@ import theme from "./mui-theme";
  */
 
 const TodosFilter = ({ dispatch }) => {
-  const matches = useMediaQuery(theme.breakpoints.up("sm"));
+  const [value, setValue] = useState(0);
 
   const handleShowAll = () => {
     dispatch({ type: "ALL_TODOS" });
@@ -25,17 +24,18 @@ const TodosFilter = ({ dispatch }) => {
     dispatch({ type: "INCOMPLETE_TODOS" });
   };
 
+  const handleChange = (e, newValue) => {
+    setValue(newValue);
+  };
+
   return (
-    <ButtonGroup
-      color="primary"
-      fullWidth
-      size={matches ? "large" : "small"}
-      style={{ marginTop: "2rem" }}
-    >
-      <Button onClick={handleShowAll}>All</Button>
-      <Button onClick={handleShowComplete}>Completed</Button>
-      <Button onClick={handleShowIncomplete}>Incomplete</Button>
-    </ButtonGroup>
+    <AppBar position="static">
+      <Tabs value={value} onChange={handleChange}>
+        <Tab onClick={handleShowAll} label="All" />
+        <Tab onClick={handleShowComplete} label="Completed" />
+        <Tab onClick={handleShowIncomplete} label="Incomplete" />
+      </Tabs>
+    </AppBar>
   );
 };
 

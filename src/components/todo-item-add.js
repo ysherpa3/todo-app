@@ -31,9 +31,30 @@ const TodoAdd = ({ TodoContext }) => {
   };
 
   return (
-    <form noValidate onSubmit={handleSubmit} style={{ width: "100%" }}>
-      <Grid alignItems="center" container justify="center" spacing={1}>
-        <Grid item xs={8}>
+    <form
+      noValidate
+      onSubmit={handleSubmit}
+      style={{ width: "100%", margin: theme.spacing(2, 0) }}
+    >
+      <Grid
+        alignItems="center"
+        container
+        justify="center"
+        style={{
+          display: "flex",
+          flexDirection: matches ? "row" : "column",
+          justifyContent: "space-evenly",
+          alignItems: "center",
+        }}
+      >
+        <Grid
+          item
+          xs={matches ? 8 : 12}
+          style={{
+            margin: matches ? theme.spacing(0, 1) : theme.spacing(1, 0),
+            width: "100%",
+          }}
+        >
           <TextField
             fullWidth
             id="todo"
@@ -51,7 +72,7 @@ const TodoAdd = ({ TodoContext }) => {
             type="submit"
             variant="contained"
           >
-            Add Todo
+            Add Task
           </Button>
         </Grid>
       </Grid>

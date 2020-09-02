@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <Grid alignItems="center" container justify="center">
       <Grid item xs={12}>
-        <Typography variant="subtitle2" align='center'>
+        <Typography variant="subtitle2" align="center">
           © {new Date().getFullYear()}
         </Typography>
       </Grid>
