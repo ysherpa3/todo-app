@@ -47,6 +47,14 @@ module.exports = {
     `gatsby-plugin-offline`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-netlify`,
+        {
+      resolve: `gatsby-plugin-material-ui`,
+      options: {
+        stylesProvider: {
+          injectFirst: true,
+        },
+      },
+    },
     {
       resolve: "gatsby-plugin-brotli",
       options: {
