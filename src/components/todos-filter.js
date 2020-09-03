@@ -1,15 +1,17 @@
-import { AppBar, Tab, Tabs } from "@material-ui/core";
+import { AppBar, Badge, Tab, Tabs, useMediaQuery } from "@material-ui/core";
 import React, { useState } from "react";
+import theme from "./mui-theme";
 
 /**
  * To-do filter component
  * Content:
- *  - Button to show all todos
- *  - Button to show completed todos
- *  - Button to show incomplete todos
+ *  - Tab to show all todos
+ *  - Tab to show completed todos
+ *  - Tab to show incomplete todos
  */
 
-const TodosFilter = ({ dispatch }) => {
+const TodosFilter = ({ dispatch, numAll, numComplete, numIncomplete }) => {
+  const smUp = useMediaQuery(theme.breakpoints.up("sm"));
   const [value, setValue] = useState(0);
 
   const handleShowAll = () => {
@@ -30,10 +32,36 @@ const TodosFilter = ({ dispatch }) => {
 
   return (
     <AppBar position="static">
-      <Tabs value={value} onChange={handleChange}>
-        <Tab onClick={handleShowAll} label="All" />
-        <Tab onClick={handleShowComplete} label="Completed" />
-        <Tab onClick={handleShowIncomplete} label="Incomplete" />
+      <Tabs
+        value={value}
+        onChange={handleChange}
+        orientation={smUp ? "horizontal" : "vertical"}
+        variant="fullWidth"
+      >
+        <Tab
+          onClick={handleShowAll}
+          label={
+            <Badge badgeContent={numAll} color="secondary">
+              All
+            </Badge>
+          }
+        />
+        <Tab
+          onClick={handleShowComplete}
+          label={
+            <Badge badgeContent={numComplete} color="secondary">
+              Completed
+            </Badge>
+          }
+        />
+        <Tab
+          onClick={handleShowIncomplete}
+          label={
+            <Badge badgeContent={numIncomplete} color="secondary">
+              Incomplete
+            </Badge>
+          }
+        />
       </Tabs>
     </AppBar>
   );

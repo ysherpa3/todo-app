@@ -66,7 +66,12 @@ const ToDoList = () => {
       >
         <TodoContext.Provider value={dispatchTodos}>
           <TodoItemAdd TodoContext={TodoContext} />
-          <TodosFilter dispatch={dispatchFilter} />
+          <TodosFilter
+            dispatch={dispatchFilter}
+            numAll={todos.length}
+            numComplete={todos.filter((todo) => todo.complete).length}
+            numIncomplete={todos.filter((todo) => !todo.complete).length}
+          />
           <TodoItemList TodoContext={TodoContext} todos={filteredTodos} />
         </TodoContext.Provider>
       </Paper>

@@ -28,6 +28,11 @@ const theme = createMuiTheme({
         },
       },
     },
+    MuiTabs: {
+      indicator: {
+        width: 5,
+      },
+    },
   },
 });
 
